@@ -1,0 +1,13 @@
+1)  https://material.angular.io/components/button/examples
+2)  npm install --save @angular/material @angular/cdk @angular/animations
+3)  install icons locally 
+	npm install material-design-icons --save
+4)       "styles": [
+        //  Local install of icons
+        "node_modules/material-design-icons/iconfont/material-icons.css",
+		...
+      ],
+
+
+5)  Import css into styles.css
+	@import "~@angular/material/prebuilt-themes/indigo-pink.css";
