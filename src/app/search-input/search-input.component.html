@@ -1,3 +1,18 @@
-<p>
-  search-input works!
-</p>
+<md-grid-list cols="1" rowHeight="300px">
+  <md-grid-tile>
+  <p>
+    
+      <md-input-container>
+        <input mdInput placeholder="Enter search text" #searchText (keyup.enter)="searchString(searchText)">
+      </md-input-container>
+      <button md-icon-button  (click)="searchString(searchText)">
+        <md-icon md-font-set="material-icons" >search</md-icon>
+      </button>
+    
+  </p> 
+
+  </md-grid-tile>
+</md-grid-list>
+
+{{showSearch}}
+{{searchText.value}}

@@ -17,7 +17,4 @@ export class AppComponent {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
-  searchString(text: HTMLInputElement){
-    console.log(text.value);
-  }
 }
