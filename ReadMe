@@ -11,3 +11,10 @@
 
 5)  Import css into styles.css
 	@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+	Reference
+
+	https://codepen.io/kyleledbetter/pen/gbQOaV
+
+	https://material.angular.io/guide/getting-started
