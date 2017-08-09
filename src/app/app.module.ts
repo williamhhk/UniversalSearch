@@ -8,6 +8,11 @@ import { SearchInputComponent } from './search-input/search-input.component';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpModule } from  '@angular/http'
+
+import { ApiService} from './api.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +21,14 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
     HeaderMenuComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     MaterialModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

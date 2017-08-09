@@ -3,8 +3,21 @@
   <p>
     
       <md-input-container>
-        <input mdInput placeholder="Enter search text" #searchText (keyup.enter)="searchString(searchText)">
+        <input mdInput 
+          autofocus="autofocus"
+          [formControl] ="myControl"
+          [mdAutocomplete]="auto"
+          placeholder="Enter search text" 
+          #searchText 
+          (keyup.enter)="searchString(searchText)">
       </md-input-container>
+
+      <md-autocomplete #auto="mdAutocomplete">
+        <md-option *ngFor="let option of filteredNames | async " [value]="option.name">
+            {{ option.name }}
+        </md-option>
+      </md-autocomplete>
+
       <button md-icon-button  (click)="searchString(searchText)">
         <md-icon md-font-set="material-icons" >search</md-icon>
       </button>
@@ -13,6 +26,3 @@
 
   </md-grid-tile>
 </md-grid-list>
-
-{{showSearch}}
-{{searchText.value}}
