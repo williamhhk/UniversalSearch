@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms'
+import { FormControl , ReactiveFormsModule} from '@angular/forms'
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -7,7 +7,9 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/switchMap';
-import { ApiService} from '../api.service'
+import 'rxjs/add/operator/share';
+import 'rxjs/add/operator/debounceTime';
+import { ApiService} from '../../services/api.service'
 
 @Component({
   selector: 'search-input',
@@ -23,12 +25,15 @@ export class SearchInputComponent implements OnInit {
   ) {
   }
   ngOnInit() {
+      console.log(this.myControl.value);
       this.filteredNames = this.myControl.valueChanges
+          .debounceTime(300)
          .startWith(null)
-         .switchMap(val=>this.apiService.getAllOptions(val));
+         .switchMap(val=> this.apiService.getAllOptions(val))
+         .share();
   }
-  searchString(text: HTMLInputElement){
-    console.log(text.value);
+  searchString(){
+    console.log(this.myControl.value);
   }
 
 }

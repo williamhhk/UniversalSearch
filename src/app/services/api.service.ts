@@ -19,6 +19,7 @@ export class ApiService {
       if (searchStr == '')
         return Observable.of([]);
       return this.http
+//        .get('http://localhost:3000/options?name_like='+searchStr)
         .get('http://localhost:3000/options?name_like='+searchStr)
         .map(response => {
           console.log(response.json())

@@ -12,4 +12,8 @@ export class HeaderBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  app1(str)
+  {
+    console.log("app1 clicked");
+  }
 }

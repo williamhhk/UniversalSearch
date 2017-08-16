@@ -1,0 +1,54 @@
+.icon-20 {
+	font-size: 20px;
+}
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+/deep/ md-toolbar-row {
+	justify-content: space-between;
+}
+
+.demo-sidenav-container {
+  border: 3px solid black;
+
+  .mat-sidenav-focus-trap > .cdk-focus-trap-content {
+    padding: 10px;
+  }
+}
+
+.demo-sidenav-content {
+  padding: 15px;
+}
+
+// https://github.com/angular/material2/issues/1728
+
+md-sidenav {
+    width: 200px;
+
+    md-icon {
+        padding-right: 20px !important;
+    }
+
+    &.mat-sidenav-closed {
+        transform: translate3d(-80%, 0, 0) !important; 
+        visibility: visible ;
+    }
+    &.mat-sidenav-closing {
+        transform: translate3d(-80%, 0, 0);
+    }    
+}
